@@ -1,6 +1,6 @@
 # CRUD_JavaWeb
 Este CRUD utiliza as tecnologias:
-JavaEE, Fundamentos de Web, Servlets, JSP, JSTL e Expression Language.
+JavaEE, Fundamentos de Web, Servlets, JSP, JSTL, Bootstrap e Expression Language.
 
 Neste sistema o objeto "Empresa" é manipulado na web.
 
