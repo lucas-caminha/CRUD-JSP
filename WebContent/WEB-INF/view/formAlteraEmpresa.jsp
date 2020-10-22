@@ -1,12 +1,13 @@
 <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/novaEmpresa" var="linkServletNovaEmpresa"/>
+<c:url value="/central" var="linkEntradaServlet"/>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html>
 <html>
 <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css" rel="stylesheet">
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro Nova Empresa</title>
+<title>Altera Empresa</title>
 </head>
 <style>
 	body {
@@ -28,18 +29,21 @@ body {
 <body>
 
 	<div class="container">
-		<form action="${linkServletNovaEmpresa}" method="post">
+		<form action="${linkEntradaServlet}" method="post">
+		  <input type="hidden" name="id" value="${empresa.id}"  />
+
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Nome da Empresa</label>
-		    <input type="text" class="form-control" placeholder="Nome da Empresa" name="nome">
+		    <input type="text" class="form-control" placeholder="Nome da Empresa" name="nome" value="${empresa.nome}">
 		  </div>
 		  
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Data de Abertura</label>
-		    <input type="text" class="form-control"  placeholder="01/01/0001" name="data">
+		    <input type="text" class="form-control"  placeholder="01/01/0001" name="data" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>">
 		  </div>
 	
-		  <button type="submit" class="btn btn-primary">Adicionar</button>
+		  <input type="hidden" name="acao" value="alteraEmpresa"  />
+		  <button type="submit" class="btn btn-primary">Editar</button>
 		</form>
 	</div>
  

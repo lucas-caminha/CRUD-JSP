@@ -39,11 +39,11 @@ body {
 					<li class="list-group-item">
 					<p>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/></p>
 					 
-					 <a class="btn btn-warning"  href="/gerenciador/mostraEmpresa?idEmpresa=${empresa.id}">Editar</a> 
-					 <a class="btn btn-danger"  href="/gerenciador/removeEmpresa?idEmpresa=${empresa.id}">Remover</a>			 
+					 <a class="btn btn-warning"  href="/gerenciador/central?acao=mostraEmpresa&idEmpresa=${empresa.id}">Editar</a> 
+					 <a class="btn btn-danger"  href="/gerenciador/central?acao=removeEmpresa&idEmpresa=${empresa.id}">Remover</a>			 
 					</li>
 				</c:forEach>
-				<a class="btn btn-success" href="/gerenciador/formNovaEmpresa.jsp">Adicionar Empresa</a> 
+				<a class="btn btn-success" href="/gerenciador/central?acao=novaEmpresaForm">Adicionar Empresa</a> 
 			</ul>
 
 		</div>
