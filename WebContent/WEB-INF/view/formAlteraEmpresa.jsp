@@ -42,7 +42,7 @@ body {
 		    <input type="text" class="form-control"  placeholder="01/01/0001" name="data" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>">
 		  </div>
 	
-		  <input type="hidden" name="acao" value="alteraEmpresa"  />
+		  <input type="hidden" name="acao" value="AlteraEmpresa"  />
 		  <button type="submit" class="btn btn-primary">Editar</button>
 		</form>
 	</div>

@@ -30,17 +30,17 @@ body {
 	<div class="container">
 		<form action="${linkServletNovaEmpresa}" method="post">
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Nome da Empresa</label>
-		    <input type="text" class="form-control" placeholder="Nome da Empresa" name="nome">
+		    <label for="exampleInputEmail1">Usuario:</label>
+		    <input type="text" class="form-control" placeholder="User" name="login">
 		  </div>
 		  
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Data de Abertura</label>
-		    <input type="text" class="form-control"  placeholder="01/01/0001" name="data">
+		    <label for="exampleInputEmail1">Senha:</label>
+		    <input type="password" class="form-control"  placeholder="********" name="senha">
 		  </div>
 	
-		  <input type="hidden" name="acao" value="AdicionaEmpresa">
-		  <button type="submit" class="btn btn-primary">Adicionar</button>
+		  <input type="hidden" name="acao" value="Login">
+		  <button type="submit" class="btn btn-primary">Login</button>
 		</form>
 	</div>
  
