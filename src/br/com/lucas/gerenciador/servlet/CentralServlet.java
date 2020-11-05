@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.lucas.gerenciador.DAO.EmpresaDAO;
 import br.com.lucas.gerenciador.DAO.UsuarioDAO;
@@ -27,6 +28,15 @@ public class CentralServlet extends HttpServlet {
 		
 		String parametro = request.getParameter("acao");
 		
+		HttpSession sessao = request.getSession();
+		boolean usuarioNaoLogado = sessao.getAttribute("usuarioLogado") == null;
+		boolean acaoProtegida = !(parametro.equals("Login") || parametro.equals("LoginForm"));
+		
+		if (acaoProtegida && usuarioNaoLogado) {
+			response.sendRedirect("central?acao=LoginForm");
+			return;
+		}
+			
 		String nomeDaClasse = "br.com.lucas.gerenciador.acao." + parametro;
 		
 		String redirecionamento;
@@ -38,29 +48,6 @@ public class CentralServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
-		//EmpresaDAO empresaDao = new EmpresaDAO();
-		//UsuarioDAO usuarioDao = new UsuarioDAO();
-		//String redirecionamento = null;
-		
-		/*
-		 * if(parametro.equals("listaEmpresas")) { redirecionamento =
-		 * empresaDao.listaEmpresas(request, response); } else if
-		 * (parametro.equals("removeEmpresa")) { redirecionamento =
-		 * empresaDao.removeEmpresa(request, response); } else if
-		 * (parametro.equals("mostraEmpresa")) { redirecionamento =
-		 * empresaDao.mostraEmpresa(request, response); } else if
-		 * (parametro.equals("alteraEmpresa")) { redirecionamento =
-		 * empresaDao.alteraEmpresa(request, response); } else if
-		 * (parametro.equals("novaEmpresa")) { redirecionamento =
-		 * empresaDao.adicionaEmpresa(request, response); } else if
-		 * (parametro.equals("novaEmpresaForm")) { redirecionamento =
-		 * empresaDao.novaEmpresaForm(request, response); } else
-		 * if(parametro.equals("loginForm")) { redirecionamento =
-		 * usuarioDao.loginForm(request, response); } else if(parametro.equals("login"))
-		 * { redirecionamento = usuarioDao.login(request, response); } else {
-		 * 
-		 * redirecionamento = empresaDao.listaEmpresas(request, response); }
-		 */
 		
 		String[] tipoRedirecionamento = redirecionamento.split(":");
 		if(tipoRedirecionamento[0].equals("forward")) {

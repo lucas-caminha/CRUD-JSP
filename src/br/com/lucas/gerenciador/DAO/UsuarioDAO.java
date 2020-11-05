@@ -16,8 +16,8 @@ public class UsuarioDAO {
 	
 	public UsuarioDAO() {
 		// Isso aqui é um teste
-		adiciona(new Usuario("lucas", "senha"));
-		adiciona(new Usuario("teste", "teste123"));
+		adiciona(new Usuario("LucasCaminha", "senha"));
+		adiciona(new Usuario("Teste", "teste123"));
 	}
 	
 	// Adiciona usuario
@@ -25,7 +25,15 @@ public class UsuarioDAO {
 		usuarios.add(usuario);
 	}
 	
-
+	public Usuario existeUsuario(String login, String senha) {
+		
+		for (Usuario usuario : usuarios) {
+			if(usuario.isEquals(login, senha)) {
+				return usuario;
+			}
+		}
+		return null;
+	}
 	
 
 

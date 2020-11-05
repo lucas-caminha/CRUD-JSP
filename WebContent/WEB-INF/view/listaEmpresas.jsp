@@ -33,6 +33,8 @@ body {
 		Empresa ${empresa} cadastrada com sucesso!
 	</c:if>
 	
+		<c:import url="NavBar.jsp"/>
+	
 		<div class="container">
 			<ul class="list-group">
 				<c:forEach items="${empresas}" var="empresa">

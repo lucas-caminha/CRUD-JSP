@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>gerenciador</display-name>
-  <welcome-file-list>
-    <welcome-file>listaEmpresas.jsp</welcome-file>
-  </welcome-file-list>
-  
+  <display-name>gerenciador</display-name>  
   <servlet>
   	<servlet-name>ServletConnection</servlet-name>
   	<servlet-class>br.com.lucas.gerenciador.servlet.ServletConnection</servlet-class>
@@ -14,5 +10,9 @@
   	<servlet-name>ServletConnection</servlet-name>
   	<url-pattern>/index</url-pattern>
   </servlet-mapping>
+  
+  <session-config>
+  		<session-timeout>10</session-timeout>
+  </session-config>
   
 </web-app>

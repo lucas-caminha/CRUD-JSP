@@ -6,7 +6,7 @@
 <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.css" rel="stylesheet">
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro Nova Empresa</title>
+<title>Login</title>
 </head>
 <style>
 	body {
@@ -31,12 +31,12 @@ body {
 		<form action="${linkServletNovaEmpresa}" method="post">
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Usuario:</label>
-		    <input type="text" class="form-control" placeholder="User" name="login">
+		    <input type="text" class="form-control" placeholder="Login" name="login">
 		  </div>
 		  
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Senha:</label>
-		    <input type="password" class="form-control"  placeholder="********" name="senha">
+		    <label for="exampleInputPassword1">Senha:</label>
+		    <input type="password" class="form-control"  placeholder="Senha" name="senha">
 		  </div>
 	
 		  <input type="hidden" name="acao" value="Login">

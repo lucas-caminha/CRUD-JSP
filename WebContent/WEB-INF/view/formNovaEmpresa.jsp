@@ -27,6 +27,8 @@ body {
 </style>
 <body>
 
+	<c:import url="NavBar.jsp"/>
+
 	<div class="container">
 		<form action="${linkServletNovaEmpresa}" method="post">
 		  <div class="form-group">

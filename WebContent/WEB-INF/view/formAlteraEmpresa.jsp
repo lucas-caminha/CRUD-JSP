@@ -28,6 +28,7 @@ body {
 </style>
 <body>
 
+    <c:import url="NavBar.jsp"/>
 	<div class="container">
 		<form action="${linkEntradaServlet}" method="post">
 		  <input type="hidden" name="id" value="${empresa.id}"  />
