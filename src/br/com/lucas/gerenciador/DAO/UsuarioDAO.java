@@ -1,12 +1,7 @@
 package br.com.lucas.gerenciador.DAO;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import br.com.lucas.gerenciador.model.Usuario;
 

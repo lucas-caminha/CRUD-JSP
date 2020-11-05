@@ -11,8 +11,41 @@
   	<url-pattern>/index</url-pattern>
   </servlet-mapping>
   
+  <!-- Tempo da sessão -->
   <session-config>
   		<session-timeout>10</session-timeout>
   </session-config>
+ 
+   <!-- Filtros --> 
+   
+     <!-- Filtro de Monitoramento -->  
+  <filter>
+    <filter-name>FMON</filter-name>
+    <filter-class>br.com.lucas.gerenciador.servlet.FiltroDeMonitoramento</filter-class>
+  </filter>
+  <filter-mapping>
+ 	  <filter-name>FMON</filter-name>
+  	  <url-pattern>/central</url-pattern>
+  </filter-mapping>
+   
+   <!-- Filtro de Autorização -->  
+  <filter>
+  	<filter-name>FAUT</filter-name>
+  	<filter-class>br.com.lucas.gerenciador.servlet.FiltroDeAutorizacao</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FAUT</filter-name>
+    <url-pattern>/central</url-pattern>
+  </filter-mapping>
+  
+     <!-- Filtro de Controle -->  
+  <filter>
+  	<filter-name>FCON</filter-name>
+  	<filter-class>br.com.lucas.gerenciador.servlet.FiltroDeControle</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FCON</filter-name>
+    <url-pattern>/central</url-pattern>
+  </filter-mapping>
   
 </web-app>

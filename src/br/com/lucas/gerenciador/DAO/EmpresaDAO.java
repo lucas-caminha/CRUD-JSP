@@ -50,6 +50,7 @@ public class EmpresaDAO {
 		empresa.setDataAbertura(data);
 	}
 	
+	// Procura a empresa
 	public Empresa buscaEmpresa(int id) {
 		for (Empresa empresa : listaDeEmpresas) {
 			if(empresa.getId() == id) {
@@ -61,6 +62,7 @@ public class EmpresaDAO {
 	
 	// Retorna a listaDeEmpresas imodificavel
 	public List<Empresa> getListaDeEmpresas(){
+		//return listaDeEmpresas;
 		return Collections.unmodifiableList(listaDeEmpresas);
 	}
 

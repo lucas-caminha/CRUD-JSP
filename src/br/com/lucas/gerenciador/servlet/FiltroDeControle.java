@@ -2,30 +2,30 @@ package br.com.lucas.gerenciador.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.com.lucas.gerenciador.acao.Acao;
 
-/**
- * Servlet implementation class CentralServlet
- */
-//@WebServlet("/central")
-public class CentralServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebFilter("/central")
+public class FiltroDeControle implements Filter {
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
+			throws IOException, ServletException {
+		
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		HttpServletResponse response = (HttpServletResponse) servletResponse;
 		
 		String parametro = request.getParameter("acao");
-			
+		
 		String nomeDaClasse = "br.com.lucas.gerenciador.acao." + parametro;
 		
 		String redirecionamento;
@@ -45,8 +45,6 @@ public class CentralServlet extends HttpServlet {
 		} else {
 			response.sendRedirect(tipoRedirecionamento[1]);
 		}
-		
-
 	}
 
 }
