@@ -1,7 +1,6 @@
 package br.com.lucas.gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,13 +18,7 @@ public class ServletConnection extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		PrintWriter out = resp.getWriter();
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Welcome Index!");
-		out.println("</body>");
-		out.println("</html>");
-		//super.service(req, resp);
+		resp.sendRedirect("central?acao=LoginForm");
 	}
 	
 

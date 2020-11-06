@@ -30,17 +30,18 @@ body {
 	<div class="container">
 		<form action="${linkServletNovaEmpresa}" method="post">
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Usuario:</label>
 		    <input type="text" class="form-control" placeholder="Login" name="login">
 		  </div>
 		  
 		  <div class="form-group">
-		    <label for="exampleInputPassword1">Senha:</label>
 		    <input type="password" class="form-control"  placeholder="Senha" name="senha">
 		  </div>
 	
 		  <input type="hidden" name="acao" value="Login">
-		  <button type="submit" class="btn btn-primary">Login</button>
+		  <div class="text-center">
+      		<button type="submit" class="btn btn-primary center">Login</button>
+          </div>
+
 		</form>
 	</div>
  
